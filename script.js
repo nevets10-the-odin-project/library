@@ -10,3 +10,7 @@ function Book(title, author, pageCount, isRead) {
 Book.prototype.toggleIsRead = function () {
 	this.isRead = !this.isRead;
 };
+
+function addBookToLibrary(book) {
+	library.push(book);
+}
