@@ -24,3 +24,19 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 addBookToLibrary(book4);
+
+const newBookDialog = document.getElementById("new_book");
+
+const newBookBtn = document.getElementById("book_dialog_btn");
+newBookBtn.addEventListener("click", openNewBookDialog);
+
+function openNewBookDialog() {
+	newBookDialog.showModal();
+}
+
+const cancelNewBtn = document.getElementById("cancel_new_book");
+cancelNewBtn.addEventListener("click", cancelNewBookDialog);
+
+function cancelNewBookDialog() {
+	newBookDialog.close();
+}
