@@ -53,4 +53,7 @@ header {
 
 .library-list {
 	align-self: center;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
 }
