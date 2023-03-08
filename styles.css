@@ -8,7 +8,7 @@
 	font-size: 62.5%;
 	--space-sm: 1.6rem;
 	--space-med: 2rem;
-	--space-lg: 2.4rem;
+	--space-lg: 3rem;
 }
 
 body {
@@ -28,7 +28,13 @@ header {
 }
 
 #book_dialog_btn {
+	background-color: #0d66d0;
+	color: #ffffff;
+	border-radius: 0.8rem;
+	border: none;
 	align-self: center;
+	font-size: 1.6rem;
+	padding: var(--space-sm) var(--space-lg);
 }
 
 #new_book {
