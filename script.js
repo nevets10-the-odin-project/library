@@ -6,3 +6,7 @@ function Book(title, author, pageCount, isRead) {
 	this.pageCount = pageCount;
 	this.isRead = isRead;
 }
+
+Book.prototype.toggleIsRead = function () {
+	this.isRead = !this.isRead;
+};
