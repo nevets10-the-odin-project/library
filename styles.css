@@ -1,3 +1,24 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	font-size: 62.5%;
+	--space-sm: 1.6rem;
+	--space-med: 2rem;
+	--space-lg: 2.4rem;
+}
+
 body {
 	background-color: #333333;
+	color: #ffffff;
+	font-size: 1.6rem;
+}
+
+header {
+	background-color: #26ae62;
+	padding: var(--space-sm);
+	position: relative;
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
