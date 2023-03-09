@@ -85,6 +85,13 @@ function createBookCard(book, index) {
 		"status",
 		`${book.isRead ? "read" : "unread"}`
 	);
+	const toggleReadBtn = createNewElement(
+		"button",
+		"toggle-read",
+		"Toggle Read Status"
+	);
+	toggleReadBtn.setAttribute("data-library-index", index);
+
 	const removeBookBtn = createNewElement("button", "remove-book", "Remove Book");
 	removeBookBtn.setAttribute("data-library-index", index);
 
@@ -92,6 +99,7 @@ function createBookCard(book, index) {
 	bookCard.appendChild(bookAuthor);
 	bookCard.appendChild(bookPageCount);
 	bookCard.appendChild(bookReadStatus);
+	bookCard.appendChild(toggleReadBtn);
 	bookCard.appendChild(removeBookBtn);
 	return bookCard;
 }
