@@ -49,10 +49,19 @@ function updateLibrary() {
 	const currentLibrary = document.querySelector(".library-list");
 	const newLibrary = createNewElement("div", "library-list", null);
 
-	library.forEach((book, index) => {
-		const newBookCard = createBookCard(book, index);
-		newLibrary.appendChild(newBookCard);
-	});
+	if (library.length >= 1) {
+		library.forEach((book, index) => {
+			const newBookCard = createBookCard(book, index);
+			newLibrary.appendChild(newBookCard);
+		});
+	} else {
+		const emptyMsg = createNewElement(
+			"p",
+			"empty-library-msg",
+			"The library is empty :("
+		);
+		newLibrary.appendChild(emptyMsg);
+	}
 
 	currentLibrary.replaceWith(newLibrary);
 	enableRemoveBtns();
