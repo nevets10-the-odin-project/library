@@ -35,7 +35,7 @@ function processNewBook(e) {
 	const newBook = new Book(title, author, pageCount, isRead);
 
 	addBookToLibrary(newBook);
-	displayLibrary();
+	updateLibrary();
 }
 
 const cancelNewBtn = document.getElementById("cancel_new_book");
@@ -45,7 +45,7 @@ function cancelNewBookDialog() {
 	newBookDialog.close();
 }
 
-function displayLibrary() {
+function updateLibrary() {
 	const currentLibrary = document.querySelector(".library-list");
 	const newLibrary = createNewElement("div", "library-list", null);
 
@@ -55,6 +55,7 @@ function displayLibrary() {
 	});
 
 	currentLibrary.replaceWith(newLibrary);
+	enableRemoveBtns();
 }
 
 function createBookCard(book, index) {
@@ -76,8 +77,6 @@ function createBookCard(book, index) {
 		`${book.isRead ? "read" : "unread"}`
 	);
 	const removeBookBtn = createNewElement("button", "remove-book", "Remove Book");
-
-	bookCard.setAttribute("data-library-index", index);
 	removeBookBtn.setAttribute("data-library-index", index);
 
 	bookCard.appendChild(bookTitle);
@@ -93,4 +92,17 @@ function createNewElement(element, elementClass, elementText) {
 	newElement.classList.add(elementClass);
 	newElement.textContent = elementText;
 	return newElement;
+}
+
+function enableRemoveBtns() {
+	const removeBtns = document.querySelectorAll(".remove-book");
+	removeBtns.forEach((button) => {
+		button.addEventListener("click", removeBook);
+	});
+}
+
+function removeBook(e) {
+	const bookIndex = e.target.getAttribute("data-library-index");
+	library.splice(bookIndex, 1);
+	updateLibrary();
 }
