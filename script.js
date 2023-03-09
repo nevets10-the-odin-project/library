@@ -64,6 +64,7 @@ function updateLibrary() {
 	}
 
 	currentLibrary.replaceWith(newLibrary);
+	attachEventListeners("toggle-read", toggleReadStatus);
 	attachEventListeners("remove-book", removeBook);
 }
 
@@ -121,5 +122,11 @@ function attachEventListeners(elementClass, callback) {
 function removeBook(e) {
 	const bookIndex = e.target.getAttribute("data-library-index");
 	library.splice(bookIndex, 1);
+	updateLibrary();
+}
+
+function toggleReadStatus(e) {
+	const bookIndex = e.target.getAttribute("data-library-index");
+	library[bookIndex].toggleIsRead();
 	updateLibrary();
 }
