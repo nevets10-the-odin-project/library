@@ -15,7 +15,7 @@
 		</header>
 		<button id="book_dialog_btn" type="button">New Book</button>
 		<dialog id="new_book">
-			<form method="dialog">
+			<form method="dialog" id="new_book_form">
 				<h2>New Book Information</h2>
 				<div class="input-container">
 					<label for="book_title">Title*</label>
@@ -34,7 +34,7 @@
 					<input type="checkbox" name="is_read" id="is_read" />
 				</div>
 				<div>
-					<button type="submit">Add Book</button>
+					<button type="submit" id="create_book">Add Book</button>
 					<button type="button" id="cancel_new_book">Cancel</button>
 				</div>
 			</form>
