@@ -75,12 +75,16 @@ function createBookCard(book, index) {
 		"status",
 		`${book.isRead ? "read" : "unread"}`
 	);
+	const removeBookBtn = createNewElement("button", "remove-book", "Remove Book");
+
+	bookCard.setAttribute("data-library-index", index);
+	removeBookBtn.setAttribute("data-library-index", index);
 
 	bookCard.appendChild(bookTitle);
 	bookCard.appendChild(bookAuthor);
 	bookCard.appendChild(bookPageCount);
 	bookCard.appendChild(bookReadStatus);
-	bookCard.setAttribute("data-library-index", index);
+	bookCard.appendChild(removeBookBtn);
 	return bookCard;
 }
 
