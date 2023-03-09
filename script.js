@@ -15,16 +15,6 @@ function addBookToLibrary(book) {
 	library.push(book);
 }
 
-const book1 = new Book("Book1", "Author1", 20, true);
-const book2 = new Book("Book2", "Author2", 40, false);
-const book3 = new Book("Book3", "Author3", 60, true);
-const book4 = new Book("Book4", "Author4", 80, false);
-
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book4);
-
 const newBookDialog = document.getElementById("new_book");
 
 const newBookBtn = document.getElementById("book_dialog_btn");
@@ -38,7 +28,6 @@ const newBookForm = document.getElementById("new_book_form");
 newBookForm.addEventListener("submit", processNewBook);
 
 function processNewBook(e) {
-	console.log(e.target[3]);
 	const title = e.target[0].value;
 	const author = e.target[1].value;
 	const pageCount = e.target[2].value;
@@ -92,5 +81,3 @@ function displayLibrary() {
 
 	currentLibrary.replaceWith(newLibrary);
 }
-
-displayLibrary();
