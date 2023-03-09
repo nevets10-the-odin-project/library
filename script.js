@@ -93,7 +93,7 @@ function createBookCard(book, index) {
 	);
 	toggleReadBtn.setAttribute("data-library-index", index);
 
-	const removeBookBtn = createNewElement("button", "remove-book", "Remove Book");
+	const removeBookBtn = createNewElement("button", "remove-book", "×");
 	removeBookBtn.setAttribute("data-library-index", index);
 
 	bookCard.appendChild(bookTitle);
