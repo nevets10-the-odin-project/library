@@ -97,11 +97,11 @@ function createBookCard(book, index) {
 	removeBookBtn.setAttribute("data-library-index", index);
 
 	bookCard.appendChild(bookTitle);
+	bookCard.appendChild(removeBookBtn);
 	bookCard.appendChild(bookAuthor);
 	bookCard.appendChild(bookPageCount);
 	bookCard.appendChild(bookReadStatus);
 	bookCard.appendChild(toggleReadBtn);
-	bookCard.appendChild(removeBookBtn);
 	return bookCard;
 }
 
