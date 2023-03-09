@@ -52,32 +52,43 @@ function displayLibrary() {
 	newLibrary.classList.add("library-list");
 
 	library.forEach((book, index) => {
-		const bookCard = document.createElement("div");
-		bookCard.classList.add("book-card");
-		bookCard.setAttribute("data-library-index", index);
-
-		const bookTitle = document.createElement("h3");
-		bookTitle.classList.add("title");
-		bookTitle.textContent = book.title;
-		bookCard.appendChild(bookTitle);
-
-		const bookAuthor = document.createElement("p");
-		bookAuthor.classList.add("author");
-		bookAuthor.textContent = `written by ${book.author}`;
-		bookCard.appendChild(bookAuthor);
-
-		const bookPageCount = document.createElement("p");
-		bookPageCount.classList.add("page-count");
-		bookPageCount.textContent = `Number of pages: ${book.pageCount}`;
-		bookCard.appendChild(bookPageCount);
-
-		const bookReadStatus = document.createElement("p");
-		bookReadStatus.classList.add("status");
-		bookReadStatus.textContent = `${book.isRead ? "read" : "unread"}`;
-		bookCard.appendChild(bookReadStatus);
-
-		newLibrary.appendChild(bookCard);
+		const newBookCard = createBookCard(book, index);
+		newLibrary.appendChild(newBookCard);
 	});
 
 	currentLibrary.replaceWith(newLibrary);
+}
+
+function createBookCard(book, index) {
+	const bookCard = createNewElement("div", "book-card", null);
+	const bookTitle = createNewElement("h3", "title", book.title);
+	const bookAuthor = createNewElement(
+		"p",
+		"author",
+		`Written by ${book.author}`
+	);
+	const bookPageCount = createNewElement(
+		"p",
+		"page-count",
+		`Number of pages: ${book.pageCount}`
+	);
+	const bookReadStatus = createNewElement(
+		"p",
+		"status",
+		`${book.isRead ? "read" : "unread"}`
+	);
+
+	bookCard.appendChild(bookTitle);
+	bookCard.appendChild(bookAuthor);
+	bookCard.appendChild(bookPageCount);
+	bookCard.appendChild(bookReadStatus);
+	bookCard.setAttribute("data-library-index", index);
+	return bookCard;
+}
+
+function createNewElement(element, elementClass, elementText) {
+	const newElement = document.createElement(element);
+	newElement.classList.add(elementClass);
+	newElement.textContent = elementText;
+	return newElement;
 }
