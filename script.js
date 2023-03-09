@@ -64,7 +64,7 @@ function updateLibrary() {
 	}
 
 	currentLibrary.replaceWith(newLibrary);
-	enableRemoveBtns();
+	attachEventListeners("remove-book", removeBook);
 }
 
 function createBookCard(book, index) {
@@ -111,10 +111,10 @@ function createNewElement(element, elementClass, elementText) {
 	return newElement;
 }
 
-function enableRemoveBtns() {
-	const removeBtns = document.querySelectorAll(".remove-book");
-	removeBtns.forEach((button) => {
-		button.addEventListener("click", removeBook);
+function attachEventListeners(elementClass, callback) {
+	const element = document.querySelectorAll(`.${elementClass}`);
+	element.forEach((button) => {
+		button.addEventListener("click", callback);
 	});
 }
 
