@@ -71,3 +71,21 @@ header {
 	position: relative;
 	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
+
+.book-card button {
+	border-radius: 0.8rem;
+	border: none;
+	align-self: center;
+	font-size: 1.6rem;
+	padding: 0.8rem 1rem;
+}
+
+.toggle-read {
+	background-color: #2fadad;
+	color: #000000;
+}
+
+.remove-book {
+	background-color: #ad3126;
+	color: #ffffff;
+}
