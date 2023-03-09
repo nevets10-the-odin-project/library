@@ -47,9 +47,7 @@ function cancelNewBookDialog() {
 
 function displayLibrary() {
 	const currentLibrary = document.querySelector(".library-list");
-
-	const newLibrary = document.createElement("div");
-	newLibrary.classList.add("library-list");
+	const newLibrary = createNewElement("div", "library-list", null);
 
 	library.forEach((book, index) => {
 		const newBookCard = createBookCard(book, index);
