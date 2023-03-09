@@ -84,7 +84,7 @@ function createBookCard(book, index) {
 	const bookReadStatus = createNewElement(
 		"p",
 		"status",
-		`${book.isRead ? "read" : "unread"}`
+		`${book.isRead ? "Read" : "Unread"}`
 	);
 	const toggleReadBtn = createNewElement(
 		"button",
