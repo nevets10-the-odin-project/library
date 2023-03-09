@@ -13,6 +13,7 @@
 
 button {
 	cursor: pointer;
+	color: #ffffff;
 }
 
 body {
@@ -33,7 +34,6 @@ header {
 
 #book_dialog_btn {
 	background-color: #0d66d0;
-	color: #ffffff;
 	border-radius: 0.8rem;
 	border: none;
 	align-self: center;
@@ -53,6 +53,11 @@ header {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-sm);
+}
+
+form button {
+	color: #000000;
+	padding: 0.4rem 0.8rem;
 }
 
 .input-container {
@@ -92,7 +97,6 @@ header {
 .remove-book {
 	grid-column: 2 / 3;
 	background-color: #ad3126;
-	color: #ffffff;
 	font-weight: bold;
 	border-radius: 100%;
 	padding: 0.4rem 0.8rem;
@@ -105,8 +109,7 @@ header {
 }
 
 .toggle-read {
-	background-color: #2fadad;
-	color: #000000;
+	background-color: #114d2b;
 	border-radius: 0.8rem;
-	padding: 0.4rem 0.8rem;
+	padding: 0.8rem 1rem;
 }
