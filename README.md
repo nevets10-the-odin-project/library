@@ -1,5 +1,10 @@
-# library
-Library project from the Full Stack JavaScript path
+# Project: Library
+
+https://www.theodinproject.com/lessons/node-path-javascript-library
+
+## Introduction
+
+Let’s extend the ‘Book’ example from the [previous lesson](https://www.theodinproject.com/lessons/node-path-javascript-objects-and-object-constructors#exercise) and turn it into a small Library app.
 
 ## Post project reflection
 This project was pretty straight forward. Since it was primarily tied to using constructors, I'm going to call the interface good enough for now.
